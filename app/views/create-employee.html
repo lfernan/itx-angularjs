@@ -1,0 +1,48 @@
+<div ng-controller="CreateEmployeeCtrl">
+  <form novalidate class="simple-form" style="margin-bottom: 50px;">
+    <div class="form-group">
+      <label for="empName">Employee Name</label>
+      <input type="text" class="form-control" ng-model="employee.name" id="empName" placeholder="Enter Employee Name">
+      <label for="empSalary">Employee Salary</label>
+      <input type="number" class="form-control" min="1" ng-model="employee.salary" id="empSalary"
+        placeholder="Enter Employee Salary">
+      <label for="empDepart">Employee Department Id</label>
+      <input type="text" class="form-control" ng-model="employee.department" id="empDepart"
+        placeholder="Enter Employee Department">
+    </div>
+    <button class="btn btn-primary" ng-click="createEmployee()">Save</button>
+  </form>
+
+  <form>
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <input type="text" class="form-control" ng-model="name" placeholder="Search by name">
+      </div>
+      <div class="form-group col-md-6">
+        <input type="number" class="form-control" ng-model="salary" placeholder="Search by salary">
+      </div>
+    </div>
+    <div class="form-group col-md-6">
+        <button class="btn btn-primary" ng-click="searchBySalary()">Search By Salary</button>
+        <button class="btn btn-primary" ng-click="searchByName()">Search By Name</button>
+    </div>    
+  </form>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#ID</th>
+        <th scope="col">Name</th>
+        <th scope="col">Salary</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="emp in employeeList">
+        <th scope="row">{{emp.id}}</th>
+        <td>{{emp.name}}</td>
+        <td>{{emp.salary}}</td>
+      </tr>
+    </tbody>
+  </table>
+
+</div>

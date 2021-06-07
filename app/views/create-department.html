@@ -1,0 +1,10 @@
+<div ng-controller="CreateDepartmentCtrl">
+  <form novalidate class="simple-form" style="margin-bottom: 50px;">
+    <div class="form-group">
+      <label for="departmentName">Department Name</label>
+      <input type="text" class="form-control" ng-model="department.name" id="departmentName"
+        placeholder="Enter Department Name">
+    </div>
+    <button class="btn btn-primary" ng-click="createDeparment()">Save</button>
+  </form>
+</div>
